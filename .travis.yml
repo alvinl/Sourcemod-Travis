@@ -6,6 +6,7 @@ before_script:
   - ls
   - cp addons/sourcemod/scripting/spcomp .
   - cp addons/sourcemod/scripting/compile.sh .
+  - chmod +x spcomp
   - mkdir compiled
   - ls
 
