@@ -10,4 +10,4 @@ before_script:
   - mkdir compiled
   - ls
 
-script: "./compile.sh test-plugin.sp"
+script: "bash compile.sh test-plugin.sp"
