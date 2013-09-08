@@ -1,0 +1,6 @@
+before_script:
+  - wget http://newyork.download.maverickservers.com/source/sourcemod-1.5.0-linux.tar.gz
+  - tar zxvf sourcemod-1.5.0-linux.tar.gz
+  - cp test-plugin.sp addons/sourcemod/scripting
+  - cd addons/sourcemod/scripting
+script: ./compile.sh test-plugin.sp
