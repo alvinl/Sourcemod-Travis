@@ -7,4 +7,4 @@ before_script:
   - cp addons/sourcemod/scripting/spcomp .
   - ls
 
-script: ./spcomp test-plugin.sp
+script: "./spcomp test-plugin.sp"
