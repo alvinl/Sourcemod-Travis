@@ -9,7 +9,9 @@ before_script:
   - ls ./
   - ls ./addons/sourcemod/scripting/
 
-script: ./addons/sourcemod/scripting/spcomp ./addons/sourcemod/scripting/test-plugin.sp
+script: 
+  - ls ./
+  - ./addons/sourcemod/scripting/spcomp ./addons/sourcemod/scripting/test-plugin.sp
 
 after_script:
   - ls addons/sourcemod/scripting
