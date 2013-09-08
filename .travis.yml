@@ -4,7 +4,9 @@ before_script:
   - wget http://newyork.download.maverickservers.com/source/sourcemod-1.5.0-linux.tar.gz
   - tar zxvf sourcemod-1.5.0-linux.tar.gz
   - ls
-  - cd addons/sourcemod/scripting/
+  - cp addons/sourcemod/scripting/spcomp
+  - cp addons/sourcemod/scripting/compile.sh
+  - mkdir compiled
   - ls
 
-script: bash compile.sh test-plugin.sp
+script: "./compile.sh test-plugin.sp"
