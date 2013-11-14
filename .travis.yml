@@ -1,17 +1,26 @@
 language: c
 
+env:
+    - SOURCE_SDK=hl2sdk-ob-valve
 before_script:
-  - wget http://newyork.download.maverickservers.com/source/sourcemod-1.5.0-linux.tar.gz
-  - tar zxvf sourcemod-1.5.0-linux.tar.gz
-  - ls
-  - cp test-plugin.sp addons/sourcemod/scripting/
-  - ls addons/sourcemod/scripting
-  - chmod +x addons/sourcemod/scripting/spcomp
-  - ls ./
-  - ls ./addons/sourcemod/scripting/
+    - sudo apt-get install ia32-libs
+    - sudo apt-get install lib32z1 lib32z1-dev
+    - sudo apt-get install libc6-dev-i386 libc6-i386
+    - mkdir sm
+    - cd sm
+    - hg clone http://hg.alliedmods.net/sourcemod-central 
+    - hg clone http://hg.alliedmods.net/hl2sdks/$SOURCE_SDK
+    - hg clone http://hg.alliedmods.net/mmsource-central/
+    - cd sm/sourcemod-central/core/
+    - make ENGINE=orangeboxvalve
+    - cp test-plugin.sp addons/sourcemod/scripting/
+    - ls addons/sourcemod/scripting
+    - chmod +x addons/sourcemod/scripting/spcomp
+    - ls ./
+    - ls ./addons/sourcemod/scripting/
 
 script: 
-  - ./addons/sourcemod/scripting/spcomp ./addons/sourcemod/scripting/test-plugin
+    - ./addons/sourcemod/scripting/spcomp ./addons/sourcemod/scripting/test-plugin
 
 after_script:
-  - ls addons/sourcemod/scripting
+    - ls addons/sourcemod/scripting
