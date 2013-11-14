@@ -1,24 +1,21 @@
 language: c
 
-env:
-    - SOURCE_SDK=hl2sdk-ob-valve;ENGINE=orangeboxvalve
-
 before_install:
     - sudo apt-get update
     - sudo apt-get install gcc-multilib
 
 before_script:
-    - wget http://newyork.download.maverickservers.com/source/sourcemod-1.5.0-linux.tar.gz
-    - tar zxvf sourcemod-1.5.0-linux.tar.gz
-    - ls
+    - wget -O smdrop15.html http://www.sourcemod.net/smdrop/1.5/
+    - FILE=`egrep '"sourcemod-1\.5\..*-hg.*-linux\.tar\.gz"' smdrop15.html | cut -d '"' -f 2 | tail -1`
+    - wget http://www.sourcemod.net/smdrop/1.5/$FILE
+    - tar -xzf $FILE
+    - cd addons/sourcemod/scripting/
+    - chmod +x spcomp
+    - chmod +x compile.sh
     - cp test-plugin.sp addons/sourcemod/scripting/
-    - ls addons/sourcemod/scripting
-    - chmod +x addons/sourcemod/scripting/spcomp
-    - ls ./
-    - ls ./addons/sourcemod/scripting/
 
 script: 
-    - ./addons/sourcemod/scripting/spcomp ./addons/sourcemod/scripting/test-plugin
+    - ./compile.sh
 
 after_script:
-    - ls addons/sourcemod/scripting
+    - ls ../plugin
