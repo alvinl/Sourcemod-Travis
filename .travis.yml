@@ -1,15 +1,17 @@
 language: c
 
 env:
-    - SOURCE_SDK=hl2sdk-ob-valve
+    - SOURCE_SDK=hl2sdk-ob-valve;ENGINE=orangeboxvalve
 before_script:
     - mkdir sm
     - cd sm
     - hg clone http://hg.alliedmods.net/sourcemod-central 
     - hg clone http://hg.alliedmods.net/hl2sdks/$SOURCE_SDK
     - hg clone http://hg.alliedmods.net/mmsource-central/
-    - cd sm/sourcemod-central/core/
-    - make ENGINE=orangeboxvalve
+    - cd sourcemod-central/core/
+    - make ENGINE=$ENGINE
+    - ls
+    - ls Release.$ENGINE
     - cp test-plugin.sp addons/sourcemod/scripting/
     - ls addons/sourcemod/scripting
     - chmod +x addons/sourcemod/scripting/spcomp
