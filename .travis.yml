@@ -16,7 +16,6 @@ before_script:
     - cp test-plugin.sp addons/sourcemod/scripting/
     - ls addons/sourcemod/scripting
     - chmod +x addons/sourcemod/scripting/spcomp
-    - ls ./
     - ls ./addons/sourcemod/scripting/
 
 script: 
