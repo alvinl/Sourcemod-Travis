@@ -4,6 +4,7 @@ env:
     - SOURCE_SDK=hl2sdk-ob-valve;ENGINE=orangeboxvalve
 
 before_install:
+    - sudo apt-get update
     - sudo apt-get install gcc-multilib
 
 before_script:
