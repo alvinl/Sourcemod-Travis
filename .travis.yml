@@ -14,6 +14,7 @@ before_script:
     - hg clone http://hg.alliedmods.net/hl2sdks/$SOURCE_SDK
     - hg clone http://hg.alliedmods.net/mmsource-central/
     - cd sourcemod-central/core/
+    - cp ../public/amtl/*.h ../public/
     - make ENGINE=$ENGINE
     - ls
     - ls Release.$ENGINE
