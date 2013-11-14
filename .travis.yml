@@ -3,6 +3,7 @@ language: c
 env:
     - SOURCE_SDK=hl2sdk-ob-valve;ENGINE=orangeboxvalve
 before_script:
+    - sudo apt-get install libc6-dev-i386
     - mkdir sm
     - cd sm
     - hg clone http://hg.alliedmods.net/sourcemod-central 
