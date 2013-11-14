@@ -8,19 +8,13 @@ before_install:
     - sudo apt-get install gcc-multilib
 
 before_script:
-    - mkdir sm
-    - cd sm
-    - hg clone http://hg.alliedmods.net/sourcemod-central 
-    - hg clone http://hg.alliedmods.net/hl2sdks/$SOURCE_SDK
-    - hg clone http://hg.alliedmods.net/mmsource-central/
-    - cd sourcemod-central/core/
-    - cp ../public/amtl/*.h ../public/
-    - make ENGINE=$ENGINE
+    - wget http://newyork.download.maverickservers.com/source/sourcemod-1.5.0-linux.tar.gz
+    - tar zxvf sourcemod-1.5.0-linux.tar.gz
     - ls
-    - ls Release.$ENGINE
     - cp test-plugin.sp addons/sourcemod/scripting/
     - ls addons/sourcemod/scripting
     - chmod +x addons/sourcemod/scripting/spcomp
+    - ls ./
     - ls ./addons/sourcemod/scripting/
 
 script: 
