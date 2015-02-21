@@ -14,6 +14,7 @@ before_install:
     - sudo apt-get update
     - sudo apt-get install gcc-multilib
     - sudo apt-get install lynx
+    - sudo apt-get install lib32stdc++6
 
 before_script:
     - SMPATTERN="http:.*sourcemod-.*-linux.*"
